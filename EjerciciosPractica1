@@ -257,6 +257,7 @@ table Consultas {
   idConsultas int [primary key]
   fecha date
   hora time
+  notas varchar (455)
   idMascota integer 
   idDueño integer 
   matriculaVete varchar (20) 
