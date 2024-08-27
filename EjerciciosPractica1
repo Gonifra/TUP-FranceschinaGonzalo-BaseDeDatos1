@@ -1,0 +1,275 @@
+//Biblioteca Publica
+
+/*Table libro { 
+  codigoLibro integer [primary key]
+  tituloLibro text
+  autorLibro text
+  anioPublicacion integer
+  }
+
+table Usuario {
+  idUsuario integer [primary key]
+  nombreUsuario text
+  apellidoUsuario text 
+  direccionUsuario varchar
+  telUsuario varchar 
+}
+
+table Prestamo {
+  idPrestamo integet [primary key]
+  fechaPrestamo date
+  fechaDevolucion date
+  estadoPrestamo bool
+  idUsuario integer 
+  codigoLibro integer 
+}
+
+
+
+Ref: "libro"."codigoLibro" < "Prestamo"."codigoLibro"
+Ref: "Usuario"."idUsuario" < "Prestamo"."idUsuario"
+  */
+
+//tienda ropa
+
+/*table producto {
+  codigoProd integer [primary key]
+  nombreProd text 
+  talle varchar (4)
+  color text
+  precio float 
+}
+
+table cliente {
+  idCliente integer [primary key]
+  nombreCliente text
+  apellidoCliente text
+  mailCliente varchar (50)
+  telefonoCliente varchar (25)
+}
+Table venta {
+  idVenta integer [primary key]
+  fechaVenta date
+  cantidad integer
+  formaPago varchar (50)
+  codigoProd integer 
+  idCliente integer 
+}
+
+Ref: "producto"."codigoProd" < "venta"."codigoProd"
+
+Ref: "cliente"."idCliente" < "venta"."idCliente"
+  */
+
+//Clinica Medica
+/*
+table medico{
+  idMedico integer [primary key]
+  nombreMedico varchar (100)
+  especialidad varchar (50)
+  telMedico varchar (50)
+}
+
+table paciente {
+  dniPaciente varchar (20) [primary key]
+  nombrePaciente varchar(100)
+  apellidoPaciente varchar(100)
+  fechaNacPaciente date
+  telPaciente varchar(50)
+
+}
+
+table cita {
+  idCita integer [primary key]
+  fechaCita date
+  horaCita time
+  motivoConsulta varchar (200)
+  idMedico integer 
+  dniPaciente varchar (20) 
+}
+
+Ref: "paciente"."dniPaciente" < "cita"."dniPaciente"
+
+Ref: "medico"."idMedico" < "cita"."idMedico"
+*/  
+
+//Escuela musica
+/*
+table curso{
+  idCurso integer [primary key]
+  codigoCurso integer
+  nombreCurso varchar (100)
+  nivelCurso varchar (10)
+  idEstudiante integer 
+  idProfesor integer 
+}
+
+table Estudiante{
+  idEstudiante integer [primary key]
+  nombreEstudiante varchar (100)
+  apellidoEstudiante varchar (100)
+  fechaNacEst date
+  telEstudiante varchar (100)
+}
+
+table profesor{
+  idProfesor integer [primary key]
+  nombreProfe varchar (100)
+  apellidoProfe varchar (100)
+  especialidad varchar (100)
+}
+
+Ref: "Estudiante"."idEstudiante" < "curso"."idEstudiante"
+
+Ref: "profesor"."idProfesor" < "curso"."idProfesor"
+  */
+
+  //AgenciaViajes
+/*
+table PaqueteTuristico {
+  codigoPaquete integer [primary key]
+  destino varchar  (60)
+  duracion integer
+  precio float 
+
+}
+
+table Cliente {
+  dniCliente varchar (100) [primary key]
+  nombreCliente varchar (100)
+  apellidoCliente varchar (100)
+  direccionCliente varchar (100)
+  telCliente varchar (100)
+}
+
+table Reserva {
+  idReserva integer [primary key]
+  fechaReserva date
+  cantidadPersonas integer
+  estadoReserva varchar(15)
+  dniCliente varchar (100) 
+  codigoPaquete integer 
+}
+
+Ref: "PaqueteTuristico"."codigoPaquete" < "Reserva"."codigoPaquete"
+
+Ref: "Cliente"."dniCliente" < "Reserva"."dniCliente"
+*/
+
+//hospital
+/*
+table paciente {
+  nombrePaciente varchar (100)
+  domicilioPaciente varchar (100)
+  edadPaciente integer
+  dniPaciente varchar (20) [primary key]
+
+}
+
+table Medicos {
+  matriculaMedico varchar (100) [primary key]
+  nombreMedico varchar (100)
+  especialidad varchar (100)
+}
+
+table Consultorios{
+  nombreConsul varchar(100)
+  direccionConsul varchar(100)
+  idConsul int [primary key]
+}
+
+table citas{
+  idCita integer [primary key]
+  fechaCita date
+  matriculaMedico varchar (100) 
+  dniPaciente varchar (20) 
+  idConsul int 
+}
+
+Ref: "paciente"."dniPaciente" < "citas"."dniPaciente"
+
+Ref: "citas"."matriculaMedico" < "Medicos"."matriculaMedico"
+
+Ref: "citas"."idConsul" < "Consultorios"."idConsul"
+  */
+
+//Escuela de Musica 
+/*
+table Estudiantes {
+  nombreEst varchar (100)
+  direccionEst varchar (100)
+  edadEst integer
+  numeroEst integer [primary key]
+}
+
+table Profesores {
+  nombreProf varchar (100)
+  idProf integer [primary key]
+  especialidad varchar (100)
+}
+
+table aulas{
+  nombreAula varchar (100)
+  ubicacionAula varchar (100)
+  idAula integer [primary key]
+}
+
+table Clases {
+  idClase integer [primary key]
+  fechaInscripcion date
+  idProf integer 
+  numeroEst integer 
+  idAula integer 
+}
+
+Ref: "Estudiantes"."numeroEst" < "Clases"."numeroEst"
+
+Ref: "Profesores"."idProf" < "Clases"."idProf"
+
+Ref: "aulas"."idAula" < "Clases"."idAula"
+  */
+
+//Clinica veterinaria "Salud Animal"
+
+/*
+table Mascotas{
+    nombreMascota varchar (100)
+    especieMascota varchar (100)
+    edadMascota integer
+    idMascota integer [primary key]
+  }
+
+table Dueños{
+  nombreDuenio varchar (100)
+  direccionDuenio varchar (100)
+  telefonoDuenio varchar (20)
+  idDuenio integer [primary key]
+  idMascota integer 
+}
+
+table Veterinarios {
+  matriculaVete varchar (20) [primary key]
+  nombreVete varchar (100)
+  especialidadVete varchar (100)
+}
+
+table Consultas {
+  idConsultas int [primary key]
+  fecha date
+  hora time
+  idMascota integer 
+  idDueño integer 
+  matriculaVete varchar (20) 
+}
+
+Ref: "Veterinarios"."matriculaVete" < "Consultas"."matriculaVete"
+
+
+Ref: "Dueños"."idDuenio" < "Consultas"."idDueño"
+
+Ref: "Mascotas"."idMascota" < "Consultas"."idMascota"
+
+
+
+Ref: "Mascotas"."idMascota" > "Dueños"."idMascota"
+  */
